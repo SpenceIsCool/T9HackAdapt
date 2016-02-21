@@ -35,4 +35,28 @@
 	     "Incorrect3" : " y =  print  \"The value of x is:\" + xs" 
 	 }
 	 },
+
+	 {
+    "QuestionID":"003", 
+    "Difficulty":"Medium", 
+    "Question":"Which of the following represents a conditional statement in python?",
+    "Answers":{
+	     "CorrectAnswer": "if ( x == 3 )", 
+	     "Incorrect1": "x = 2", 
+	     "Incorrect2": "x == 2", 
+	     "Incorrect3" : "print \"hello world\"" 
+	 }
+     },
+
+    {
+    "QuestionID":"004", 
+    "Difficulty":"Medium", 
+    "Question":"Which of the folowing returns 0?",
+    "Answers":{
+	     "CorrectAnswer": "0 if true else 1", 
+	     "Incorrect1": "1 if true else 0", 
+	     "Incorrect2": " x = 0 ", 
+	     "Incorrect3" : " if 0: 1 " 
+	 }
+     },
 ]}
