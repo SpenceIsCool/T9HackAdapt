@@ -75,20 +75,35 @@ $(document).ready(function(){
 					upDifficulty();
 				}
 				console.log("Total correct: " + totalCorrect + " Current Diff: " + currentLevel);
+
+				$("input:radio").attr("checked", false);
+
+				updateQuestion();
 			}
 			else{
+				document.getElementById("me").innerHTML = " ";
+				document.getElementById("myForm").innerHTML = "You answered: <br />"+ selectedAnswer+"<br /> The correct answer is: <br/>"+currentQuestion.answer1;
+				document.getElementById("corrections").innerHTML = "<div class=\"submit\" id = \"continue\"> <input type=\"image\" src=\"./img/continue.png\" name=\"saveForm\" class=\"btSubmit\" id=\"btsub\"  /></div>";
+			}
+		}
+		else{}
+	});
+
+	$("#corrections").click(function(){
+		console.log("clicking???")
+		document.getElementById("corrections").innerHTML = " ";
+		document.getElementById("myForm").innerHTML = "	<input type=\"radio\" name=\"question\" value=\"1\" id=\"q1a\"><label id=\"thisnode2\"></label><br/><input type=\"radio\" name=\"question\" value=\"2\" id=\"q1b\"><label id=\"thisnode3\"></label><br/><input type=\"radio\" name=\"question\" value=\"3\" id=\"q1c\"><label id=\"thisnode4\"></label><br/><input type=\"radio\" name=\"question\" value=\"4\" id=\"q1d\"><label id=\"thisnode5\"></label><br/>";
+		document.getElementById("me").innerHTML = "<input type=\"image\" src=\"./img/submit.png\" name=\"saveForm\" class=\"btSubmit\" id=\"btsub\"  />";
 				totalIncorrect += 1;
 				document.getElementById("correctIncorrect").innerHTML += "<li class=\"b\" id=\"f2\"><img src=\"./img/Wrong.png\" alt=\"icon\" /></li>";
 				if(totalIncorrect >= 3){
 					downDifficulty();
 				}
 				console.log("Total incorrect: " + totalIncorrect+ " Current Diff: " + currentLevel);
-			}
-			$("input:radio").attr("checked", false);
+				$("input:radio").attr("checked", false);
 
 			updateQuestion();
-		}
-		else{}
+
 	});
 	
 	function updateQuestion(){
@@ -153,14 +168,14 @@ $(document).ready(function(){
 				totalIncorrect = 0;
 				document.getElementById("correctIncorrect").innerHTML = " ";
 				currentLevel = "M";
-				document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyMed.jpg\" alt=\"icon\" />";
+				// document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyMed.jpg\" alt=\"icon\" />";
 				break;
 			case "M": 
 				totalCorrect = 0;
 				totalIncorrect = 0;
 				document.getElementById("correctIncorrect").innerHTML = " ";
 				currentLevel = "H";
-				document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyHard.jpg\" alt=\"icon\" />";
+				// document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyHard.jpg\" alt=\"icon\" />";
 				break;
 			
 		}
@@ -183,14 +198,14 @@ $(document).ready(function(){
 				totalIncorrect = 0; 
 				currentLevel = "E";
 				document.getElementById("correctIncorrect").innerHTML = " ";
-				document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyEasy.jpg\" alt=\"icon\" />";
+				// document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyEasy.jpg\" alt=\"icon\" />";
 				break;
 			case "H": 
 				currentLevel = "M";
 				totalCorrect = 0;
 				totalIncorrect = 0;
 				document.getElementById("correctIncorrect").innerHTML = " ";
-				document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyMed.jpg\" alt=\"icon\" />";
+				// document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyMed.jpg\" alt=\"icon\" />";
 				break;
 		}
 	}
