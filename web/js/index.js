@@ -133,14 +133,10 @@ $(document).ready(function(){
 	}
 
 	function upDifficulty(){
-<<<<<<< HEAD
 		totalCorrect = 0;
 		totalIncorrect = 0;
 		totalAnswered = 0;
-		clearTrack();
-=======
-		
->>>>>>> f070edd606f5086ed68fe846abee0f25aae4a8f3
+
 		switch(currentLevel){
 			case "H": 
 				if((totalIncorrect + totalCorrect) <= 5){
