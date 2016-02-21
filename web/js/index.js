@@ -18,7 +18,7 @@ $(document).ready(function(){
 	var CorrectAnswer = currentQuestion.answer1;
 
 	function newQuestionText(currQuestion){
-		document.getElementById("thisnode").innerText = currQuestion.question;
+		$("#thisnode").text(currQuestion.question);
 		var rand2 = Math.floor(Math.random()*100%4);
 		switch(rand2){
 			case 0: 
@@ -156,18 +156,18 @@ $(document).ready(function(){
 			case "E": 
 				totalCorrect = 0;
 				totalIncorrect = 0;
-				document.getElementById("med").innerText = "Intermediate";
-				document.getElementById("easy").innerText = " ";
-				document.getElementById("correctIncorrect").innerHTML = " ";
+				$("#med").text("Intermediate");
+				$("#easy").text(" ");
+				$("#correctIncorrect").text(" ");
 				currentLevel = "M";
 				// document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyMed.jpg\" alt=\"icon\" />";
 				break;
 			case "M": 
 				totalCorrect = 0;
 				totalIncorrect = 0;
-				document.getElementById("med").innerText = " "
-				document.getElementById("hard").innerText = "Proficient"
-				document.getElementById("correctIncorrect").innerHTML = " ";
+				$("#med").text(" ");
+				$("#hard").text("Proficient");
+				$("#correctIncorrect").text(" ");
 				currentLevel = "H";
 				// document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyHard.jpg\" alt=\"icon\" />";
 				break;
@@ -190,18 +190,18 @@ $(document).ready(function(){
 				totalCorrect = 0;
 				totalIncorrect = 0; 
 				currentLevel = "E";
-				document.getElementById("med").innerText = " "
-				document.getElementById("easy").innerText = "Beginner"
-				document.getElementById("correctIncorrect").innerHTML = " ";
+				$("#med").text(" ");
+				$("#easy").text("Beginner");
+				$("#correctIncorrect").text(" ");
 				// document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyEasy.jpg\" alt=\"icon\" />";
 				break;
 			case "H": 
 				currentLevel = "M";
 				totalCorrect = 0;
 				totalIncorrect = 0;
-				document.getElementById("hard").innerText = " "
-				document.getElementById("med").innerText = "Intermediate"
-				document.getElementById("correctIncorrect").innerHTML = " ";
+				$("#hard").text(" ");
+				$("#med").text("Intermediate");
+				$("#correctIncorrect").text(" ");
 				// document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyMed.jpg\" alt=\"icon\" />";
 				break;
 		}

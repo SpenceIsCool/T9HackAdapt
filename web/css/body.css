@@ -8,6 +8,11 @@
 	box-sizing: border-box;
 }
 
+a {
+	color: inherit;
+	text-decoration: none;	
+}
+
 #easy{
 	margin-left: 5%;
 	width: 30%;
@@ -61,11 +66,13 @@ li.b {
 	display: inline-block;
 	padding: 25px 0px;}
 body {
-	font-family: Arial, Verdana, sans-serif;
+	font-family: Roboto:300, Arial, Verdana, sans-serif;
 	color: #000000;
 	padding: 5px 0px;
+	background-color: #f3e5f5;
 	margin: 0 auto;}
 .titleBar {
+	font-family: Roboto:300;
 	background-color: #ffffff;
 	height: 43px;
 	padding: 1px }
