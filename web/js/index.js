@@ -133,7 +133,14 @@ $(document).ready(function(){
 	}
 
 	function upDifficulty(){
+<<<<<<< HEAD
+		totalCorrect = 0;
+		totalIncorrect = 0;
+		totalAnswered = 0;
+		clearTrack();
+=======
 		
+>>>>>>> f070edd606f5086ed68fe846abee0f25aae4a8f3
 		switch(currentLevel){
 			case "H": 
 				if((totalIncorrect + totalCorrect) <= 5){
@@ -192,6 +199,7 @@ $(document).ready(function(){
 		}
 	}
 
+
 	//Constructor for Questions
 	function Question (question, ans1, ans2, ans3, ans4) {
 		this.question = question;
@@ -219,12 +227,12 @@ $(document).ready(function(){
 
 				{
 			    "QuestionID":"0001", 
-			    "Question":" YOU know....?",
+			    "Question":" How do I compare if the variable x stores the value 1?",
 			    "Answers":{
-				    "CorrectAnswer": " Frodo", 
-				    "Incorrect1": " Odyseus", 
-				    "Incorrect2": " motion ", 
-				    "Incorrect3" : " c++ " 
+				    "CorrectAnswer": " x == 1 ", 
+				    "Incorrect1": " x = 1", 
+				    "Incorrect2": " int x == 1", 
+				    "Incorrect3" : " 1 = x " 
 				}
 			    },
 
@@ -232,7 +240,7 @@ $(document).ready(function(){
 			    "QuestionID":"0002", 
 			    "Question":" Easy question of all questions?",
 			    "Answers":{
-				    "CorrectAnswer": " BOOM!", 
+				    "CorrectAnswer": " BOOM! ", 
 				    "Incorrect1": " b explode bomb", 
 				    "Incorrect2": " Pick ME! ", 
 				    "Incorrect3" : " Sonny " 
@@ -241,34 +249,34 @@ $(document).ready(function(){
 
 			    {
 			    "QuestionID":"0003", 
-			    "Question":" Easy question 003?",
+			    "Question":" In Python, what is the command to display hello world to the standard output?",
 			    "Answers":{
-				    "CorrectAnswer": " this thingy!", 
-				    "Incorrect1": " no", 
-				    "Incorrect2": " no ", 
-				    "Incorrect3" : " no " 
+				    "CorrectAnswer": " print \"hello world\"", 
+				    "Incorrect1": " console.log \"hello world\"", 
+				    "Incorrect2": " cout << \"hello world\"", 
+				    "Incorrect3" : " disp (\"hello world\")" 
 				}
 			    },
 			 	
 			 	{
 			    "QuestionID":"0004", 
-			    "Question":" Easy question 004?",
+			    "Question":" In Python, what is the NOT equals operator?",
 			    "Answers":{
-				    "CorrectAnswer": " this thingy!", 
-				    "Incorrect1": " no", 
-				    "Incorrect2": " no ", 
-				    "Incorrect3" : " no " 
+				    "CorrectAnswer": " !=", 
+				    "Incorrect1": " ==", 
+				    "Incorrect2": " ~= ", 
+				    "Incorrect3" : " <> " 
 				}
 			    },
 
 			    {
 			    "QuestionID":"0005", 
-			    "Question":" Easy question 005?",
+			    "Question":" What is an end line comment in Python?",
 			    "Answers":{
-				    "CorrectAnswer": " this thingy!", 
-				    "Incorrect1": " no", 
-				    "Incorrect2": " no ", 
-				    "Incorrect3" : " no " 
+				    "CorrectAnswer": " # end line comment", 
+				    "Incorrect1": " // end line comment", 
+				    "Incorrect2": " % end line comment ", 
+				    "Incorrect3" : " * end line comment " 
 				}
 			    }
 			],
@@ -277,12 +285,12 @@ $(document).ready(function(){
 
 				{
 			    "QuestionID":"1000", 
-			    "Question":" In Python, what is the command to display hello world to the standard output?",
+			    "Question":"Which of the following represents a conditional statement in python?",
 			    "Answers":{
-				    "CorrectAnswer": " print \"hello world\"", 
-				    "Incorrect1": " console.log \"hello world\"", 
-				    "Incorrect2": " cout << \"hello world\"", 
-				    "Incorrect3" : " disp (\"hello world\")" 
+				     "CorrectAnswer": " if ( x == 3 )", 
+				     "Incorrect1": " x = 2", 
+				     "Incorrect2": " x == 2", 
+				     "Incorrect3" : " print \"hello world\"" 
 				}
 			    },
 
@@ -299,45 +307,45 @@ $(document).ready(function(){
 
 			    {
 			    "QuestionID":"1002", 
-			    "Question":" Medium question of all questions?",
+			    "Question":" How do you define a function in Python?",
 			    "Answers":{
-				    "CorrectAnswer": " 42", 
-				    "Incorrect1": " i can haz cheesburger", 
-				    "Incorrect2": " F = ma ", 
-				    "Incorrect3" : " Newtons 3rd law of motion " 
+				    "CorrectAnswer": " def f_name () ", 
+				    "Incorrect1": " function f_name ()", 
+				    "Incorrect2": " void f_name () ", 
+				    "Incorrect3" : " const f_name = funciton () " 
 				}
 			    },
 
 			    {
 			    "QuestionID":"1003", 
-			    "Question":" Medium question 003?",
+			    "Question":" How do you return a value or variable from a function in python?",
 			    "Answers":{
-				    "CorrectAnswer": " this thingy!", 
-				    "Incorrect1": " no", 
-				    "Incorrect2": " no ", 
-				    "Incorrect3" : " no " 
+				    "CorrectAnswer": " return x", 
+				    "Incorrect1": " output = x", 
+				    "Incorrect2": " sto x ", 
+				    "Incorrect3" : " print ( x ) " 
 				}
 			    },
 
 			    {
 			    "QuestionID":"1004", 
-			    "Question":" Medium question 004?",
+			    "Question":" What are the first two numbers of the Fibonacci Sequence?",
 			    "Answers":{
-				    "CorrectAnswer": " this thingy!", 
-				    "Incorrect1": " no", 
-				    "Incorrect2": " no ", 
-				    "Incorrect3" : " no " 
+				    "CorrectAnswer": " 0, 1", 
+				    "Incorrect1": " 1, 1", 
+				    "Incorrect2": " A, B ", 
+				    "Incorrect3" : " 0, 0 " 
 				}
 			    },
 
 			    {
 			    "QuestionID":"1005", 
-			    "Question":" Medium question 005?",
+			    "Question":" Which of the following checks if some number x is even?",
 			    "Answers":{
-				    "CorrectAnswer": " this thingy!", 
-				    "Incorrect1": " no", 
-				    "Incorrect2": " no ", 
-				    "Incorrect3" : " no " 
+				    "CorrectAnswer": " x % 2  == 0", 
+				    "Incorrect1": " x % 2 == 1", 
+				    "Incorrect2": " x / 2 == 0", 
+				    "Incorrect3" : " x / 2 == 1 " 
 				}
 			    }
 			],
@@ -346,7 +354,7 @@ $(document).ready(function(){
 
 				{
 			    "QuestionID":"2000", 
-			    "Question":"which of the following will display the value of x and a descriptive string to the standard output if x is a string?",
+			    "Question":"Which of the following will display the value of x and a descriptive string to the standard output if x is an integer?",
 			    "Answers":{
 				     "CorrectAnswer": " print \"The value of x is: {}\".format(x) ", 
 				     "Incorrect1": " print  \"The value of x is:\" + x ", 
@@ -357,56 +365,56 @@ $(document).ready(function(){
 
 				{
 			    "QuestionID":"2001", 
-			    "Question":"Which of the following represents a conditional statement in python?",
+			    "Question":"Which of the follwing is a multi line comment in Python?",
 			    "Answers":{
-				     "CorrectAnswer": " if ( x == 3 )", 
-				     "Incorrect1": " x = 2", 
-				     "Incorrect2": " x == 2", 
-				     "Incorrect3" : " print \"hello world\"" 
+				     "CorrectAnswer": " \"\"\" multi line comment \"\"\"", 
+				     "Incorrect1": " /* multi line comment */ ", 
+				     "Incorrect2": " <!-- multi line comment -->", 
+				     "Incorrect3" : " # multi line comment " 
 				}
 			    },
 
 			    {
 			    "QuestionID":"2002", 
-			    "Question":"Hard question of all questions?",
+			    "Question":" Which of the folowing returns 0?",
 			    "Answers":{
-				    "CorrectAnswer": " Cake!", 
-				    "Incorrect1": " Cher", 
-				    "Incorrect2": " PV = nRT ", 
-				    "Incorrect3" : " PA = LU factorization " 
-				}
-			    },
+				     "CorrectAnswer": " 0 if true else 1", 
+				     "Incorrect1": " 1 if true else 0", 
+				     "Incorrect2": " x = 0 ", 
+				     "Incorrect3" : " if 0: 1 " 
+				 }
+			     },
 
 			    {
 			    "QuestionID":"2003", 
-			    "Question":" Hard question 003?",
+			    "Question":" What is required for recursion?",
 			    "Answers":{
-				    "CorrectAnswer": " this thingy!", 
-				    "Incorrect1": " no", 
-				    "Incorrect2": " no ", 
-				    "Incorrect3" : " no " 
+				    "CorrectAnswer": " named functions", 
+				    "Incorrect1": " anonomous functions", 
+				    "Incorrect2": " well defined variables names", 
+				    "Incorrect3" : " lots of comments " 
 				}
 			    },
 
 			    {
 			    "QuestionID":"2004", 
-			    "Question":" Hard question 004?",
+			    "Question":" Suppose I have a list: \"myList\" and I'd like to itterate over its elliments. What is one way to accomplish this?",
 			    "Answers":{
-				    "CorrectAnswer": " this thingy!", 
-				    "Incorrect1": " no", 
-				    "Incorrect2": " no ", 
-				    "Incorrect3" : " no " 
+				    "CorrectAnswer": " for i in myList:", 
+				    "Incorrect1": " for i in range myList:", 
+				    "Incorrect2": " while myList: ", 
+				    "Incorrect3" : " myList = x " 
 				}
 			    },
 
 			    {
 			    "QuestionID":"2005", 
-			    "Question":" Hard question 005?",
+			    "Question":" Which Python library stores the value of the natural number pi?",
 			    "Answers":{
-				    "CorrectAnswer": " this thingy!", 
-				    "Incorrect1": " no", 
-				    "Incorrect2": " no ", 
-				    "Incorrect3" : " no " 
+				    "CorrectAnswer": " math", 
+				    "Incorrect1": " bakery", 
+				    "Incorrect2": " pi ", 
+				    "Incorrect3" : " numbers " 
 				}
 			    }
 			]
