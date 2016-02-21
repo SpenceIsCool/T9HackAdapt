@@ -7,13 +7,14 @@ $(document).ready(function(){
 	var easyIndex = 0;
 	var mediumIndex = 0;
 	var hardIndex = 0;
+	var endSummary = [];
 
 	//Pull data from JSON 
 	var questions = getJSONInput();
 	
 	//Set the current question
 	var currentQuestion = new Question(questions.QuestionBank.MediumBank[0].Question, questions.QuestionBank.MediumBank[0].Answers.CorrectAnswer, 
-		questions.QuestionBank.MediumBank[0].Answers.Incorrect1, questions.QuestionBank.MediumBank[0].Answers.Incorrect2, questions.QuestionBank.MediumBank[0].Answers.Incorrect3);
+		questions.QuestionBank.MediumBank[0].Answers.Incorrect1, questions.QuestionBank.MediumBank[0].Answers.Incorrect2, questions.QuestionBank.MediumBank[0].Answers.Incorrect3, questions.QuestionBank.MediumBank[0].Feedback);
 	var CorrectAnswer = currentQuestion.answer1;
 
 	function newQuestionText(currQuestion){
@@ -82,8 +83,9 @@ $(document).ready(function(){
 			}
 			else{
 				document.getElementById("me").innerHTML = " ";
-				document.getElementById("myForm").innerHTML = "You answered: <br />"+ selectedAnswer+"<br /> The correct answer is: <br/>"+currentQuestion.answer1;
+				document.getElementById("myForm").innerHTML = "You answered: <br />"+ selectedAnswer+"<br /> The correct answer is: <br/>"+currentQuestion.answer1 + "<br/> Please also note that: <br/>" + currentQuestion.feedback;
 				document.getElementById("corrections").innerHTML = "<div class=\"submit\" id = \"continue\"> <input type=\"image\" src=\"./img/continue.png\" name=\"saveForm\" class=\"btSubmit\" id=\"btsub\"  /></div>";
+				endSummary.push(currentQuestion.question + "<br /> You answered: <br />"+ selectedAnswer+"<br /> The correct answer is: <br/>"+currentQuestion.answer1 + "<br/> Please also note that: <br/>" + currentQuestion.feedback + "<br/><br/>")
 			}
 		}
 		else{}
@@ -110,15 +112,15 @@ $(document).ready(function(){
 		switch(currentLevel){
 			case "E": 
 				currentQuestion = new Question(questions.QuestionBank.EasyBank[easyIndex].Question, questions.QuestionBank.EasyBank[easyIndex].Answers.CorrectAnswer,
-					questions.QuestionBank.EasyBank[easyIndex].Answers.Incorrect1,questions.QuestionBank.EasyBank[easyIndex].Answers.Incorrect2, questions.QuestionBank.EasyBank[easyIndex].Answers.Incorrect3)
+					questions.QuestionBank.EasyBank[easyIndex].Answers.Incorrect1,questions.QuestionBank.EasyBank[easyIndex].Answers.Incorrect2, questions.QuestionBank.EasyBank[easyIndex].Answers.Incorrect3,questions.QuestionBank.EasyBank[easyIndex].Feedback)
 				break;
 			case "M": 
 				currentQuestion = new Question(questions.QuestionBank.MediumBank[mediumIndex].Question, questions.QuestionBank.MediumBank[mediumIndex].Answers.CorrectAnswer,
-					questions.QuestionBank.MediumBank[mediumIndex].Answers.Incorrect1,questions.QuestionBank.MediumBank[mediumIndex].Answers.Incorrect2, questions.QuestionBank.MediumBank[mediumIndex].Answers.Incorrect3)
+					questions.QuestionBank.MediumBank[mediumIndex].Answers.Incorrect1,questions.QuestionBank.MediumBank[mediumIndex].Answers.Incorrect2, questions.QuestionBank.MediumBank[mediumIndex].Answers.Incorrect3,questions.QuestionBank.MediumBank[mediumIndex].Feedback)
 				break;
 			case "H": 
 				currentQuestion = new Question(questions.QuestionBank.HardBank[hardIndex].Question, questions.QuestionBank.HardBank[hardIndex].Answers.CorrectAnswer,
-					questions.QuestionBank.HardBank[hardIndex].Answers.Incorrect1,questions.QuestionBank.HardBank[hardIndex].Answers.Incorrect2, questions.QuestionBank.HardBank[hardIndex].Answers.Incorrect3)
+					questions.QuestionBank.HardBank[hardIndex].Answers.Incorrect1,questions.QuestionBank.HardBank[hardIndex].Answers.Incorrect2, questions.QuestionBank.HardBank[hardIndex].Answers.Incorrect3, questions.QuestionBank.HardBank[hardIndex].Feedback)
 				break;
 		}
 		newQuestionText(currentQuestion);
@@ -156,8 +158,7 @@ $(document).ready(function(){
 
 				}
 				else{
-					totalCorrect = 0;
-					totalIncorrect = 0;
+					dispSummary()
 					document.getElementById("correctIncorrect").innerHTML = " ";
 				}
 				break;
@@ -190,8 +191,7 @@ $(document).ready(function(){
 
 				}
 				else{
-					totalCorrect = 0;
-					totalIncorrect = 0;
+					dispSummary();
 					document.getElementById("correctIncorrect").innerHTML = " ";
 				}
 				break;
@@ -216,14 +216,23 @@ $(document).ready(function(){
 		}
 	}
 
+	function dispSummary(){
+		document.getElementById("endSummary").innerHTML = ""
+		for (var i = 0 ; i < endSummary.length; i++)
+			document.getElementById("endSummary").innerHTML += endSummary[i]
+		if (endSummary.length == 0) document.getElementById("endSummary").innerHTML += 	"<img src=\"./img/Logo2.png\" alt=\"logo, congrats you won!\" />";
+
+	}
+
 
 	//Constructor for Questions
-	function Question (question, ans1, ans2, ans3, ans4) {
+	function Question (question, ans1, ans2, ans3, ans4, feedback) {
 		this.question = question;
 		this.answer1 = ans1;
 		this.answer2 = ans2;
 		this.answer3 = ans3;
 		this.answer4 = ans4;
+		this.feedback = feedback;
 	}
 
 	function getJSONInput(){
@@ -315,19 +324,19 @@ $(document).ready(function(){
 				     "Incorrect2": " x == 2", 
 				     "Incorrect3" : " print \"hello world\"" 
 				},
-				"Feedback": " The '==' is used for comparison of elements."
+				"Feedback": " 'if' is used to define conditions in Python."
 			    },
 
 			    {
 			    "QuestionID":"1001", 
-			    "Question":" For x = 0, which of the folling prints -1?",
+			    "Question":" For x = 0, which of the following displays -1 to the standard output?",
 			    "Answers":{
 				     "CorrectAnswer": " print x -=1 ", 
 				     "Incorrect1": " x = x - 1", 
 				     "Incorrect2": " print '0-1'", 
 				     "Incorrect3" : " -1 " 
 				 },
-				"Feedback": " The '==' is used for comparison of elements."
+				"Feedback": " the '-=' operator can be googled upon."
 			     },
 
 			    {
