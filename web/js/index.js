@@ -75,38 +75,28 @@ $(document).ready(function(){
 				if(totalCorrect >= 3){
 					upDifficulty();
 				}
-				console.log("Total correct: " + totalCorrect + " Current Diff: " + currentLevel);
-
-				$("input:radio").attr("checked", false);
-
-				updateQuestion();
 			}
 			else{
-				document.getElementById("me").innerHTML = " ";
-				document.getElementById("thisnode").innerHTML = " ";
-				document.getElementById("myForm").innerHTML = "<div class=\" endSolnWell\"><div class = \"endSolnQ\">"+currentQuestion.question + "</div><br /><span class = \"endSolnQ\"> You answered: </span>"+ selectedAnswer+"<br /><span class = \"endSolnQ\"> The correct answer is:</span> "+currentQuestion.answer1 + "<br /><br/><div class = \"endSolnQ\"> Please also note that: </div>" + currentQuestion.feedback + "</div><br/><br/>";
-				document.getElementById("corrections").innerHTML = "<div class=\"submit\" id = \"continue\"> <input type=\"image\" src=\"./img/continue.png\" name=\"saveForm\" class=\"btSubmit\" id=\"btsub\"  /></div>";
-				endSummary.push("<div class=\" endSolnWell\"><div class = \"endSolnQ\">"+currentQuestion.question + "</div><br /><span class = \"endSolnQ\"> You answered: </span>"+ selectedAnswer+"<br /><span class = \"endSolnQ\"> The correct answer is:</span> "+currentQuestion.answer1 + "<br /><br/><div class = \"endSolnQ\"> Please also note that: </div>" + currentQuestion.feedback + "</div><br/><br/>");
-			}
-		}
-		else{}
-	});
-
-	$("#corrections").click(function(){
-		console.log("clicking???")
-		document.getElementById("corrections").innerHTML = " ";
-		document.getElementById("myForm").innerHTML = "	<input type=\"radio\" name=\"question\" value=\"1\" id=\"q1a\"><label id=\"thisnode2\"></label><br/><input type=\"radio\" name=\"question\" value=\"2\" id=\"q1b\"><label id=\"thisnode3\"></label><br/><input type=\"radio\" name=\"question\" value=\"3\" id=\"q1c\"><label id=\"thisnode4\"></label><br/><input type=\"radio\" name=\"question\" value=\"4\" id=\"q1d\"><label id=\"thisnode5\"></label><br/>";
-		document.getElementById("me").innerHTML = "<input type=\"image\" src=\"./img/submit.png\" name=\"saveForm\" class=\"btSubmit\" id=\"btsub\"  />";
+				var temp_s0 = currentQuestion.question;
+				var temp_s1 =  "You answered:" + selectedAnswer+"\nThe correct answer is: " +currentQuestion.answer1 + "\n\nPlease also note that: " + currentQuestion.feedback ;
+				swal({
+				  title: temp_s0,
+				  text: temp_s1,
+				  type: "error",
+				  confirmButtonText: "I Understand."
+				});
 				totalIncorrect += 1;
 				document.getElementById("correctIncorrect").innerHTML += "<li class=\"b\" id=\"f2\"><img src=\"./img/Wrong.png\" alt=\"icon\" /></li>";
 				if(totalIncorrect >= 3){
 					downDifficulty();
 				}
-				console.log("Total incorrect: " + totalIncorrect+ " Current Diff: " + currentLevel);
-				$("input:radio").attr("checked", false);
-
+			}
+			$("input:radio").attr("checked", false);
 			updateQuestion();
 
+			endSummary.push("<div class=\" endSolnWell\"><div class = \"endSolnQ\">"+currentQuestion.question + "</div><br /><span class = \"endSolnQ\"> You answered: </span>"+ selectedAnswer+"<br /><span class = \"endSolnQ\"> The correct answer is:</span> "+currentQuestion.answer1 + "<br /><br/><div class = \"endSolnQ\"> Please also note that: </div>" + currentQuestion.feedback + "</div><br/><br/>");
+		}
+		else{}
 	});
 	
 	function updateQuestion(){
@@ -166,7 +156,7 @@ $(document).ready(function(){
 			case "E": 
 				totalCorrect = 0;
 				totalIncorrect = 0;
-				document.getElementById("med").innerText = "Medium";
+				document.getElementById("med").innerText = "Intermediate";
 				document.getElementById("easy").innerText = " ";
 				document.getElementById("correctIncorrect").innerHTML = " ";
 				currentLevel = "M";
@@ -176,7 +166,7 @@ $(document).ready(function(){
 				totalCorrect = 0;
 				totalIncorrect = 0;
 				document.getElementById("med").innerText = " "
-				document.getElementById("hard").innerText = "Hard"
+				document.getElementById("hard").innerText = "Proficient"
 				document.getElementById("correctIncorrect").innerHTML = " ";
 				currentLevel = "H";
 				// document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyHard.jpg\" alt=\"icon\" />";
@@ -201,7 +191,7 @@ $(document).ready(function(){
 				totalIncorrect = 0; 
 				currentLevel = "E";
 				document.getElementById("med").innerText = " "
-				document.getElementById("easy").innerText = "Easy"
+				document.getElementById("easy").innerText = "Beginner"
 				document.getElementById("correctIncorrect").innerHTML = " ";
 				// document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyEasy.jpg\" alt=\"icon\" />";
 				break;
@@ -210,7 +200,7 @@ $(document).ready(function(){
 				totalCorrect = 0;
 				totalIncorrect = 0;
 				document.getElementById("hard").innerText = " "
-				document.getElementById("med").innerText = "Easy"
+				document.getElementById("med").innerText = "Intermediate"
 				document.getElementById("correctIncorrect").innerHTML = " ";
 				// document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyMed.jpg\" alt=\"icon\" />";
 				break;
@@ -222,7 +212,7 @@ $(document).ready(function(){
 		for (var i = 0 ; i < endSummary.length; i++)
 			document.getElementById("endSummary").innerHTML += endSummary[i]
 		if (endSummary.length == 0) document.getElementById("endSummary").innerHTML += 	"<img src=\"./img/Logo2.png\" alt=\"logo, congrats you won!\" />";
-		document.getElementById("endSummary").innerHTML += "<div class=\"submit\" id = \"continue\"> <input type=\"image\" src=\"./img/restart.png\" name=\"saveForm\" class=\"btSubmit\" id=\"btsub\"  /></div>";
+		document.getElementById("endSummary").innerHTML += "<div class=\"submit\" id = \"continue\"> <a onClick=\"history.go(0)\"><input type=\"image\" src=\"./img/restart.png\" name=\"saveForm\" class=\"btSubmit\" id=\"btsub\"  /></a></div>";
 	}
 
 
