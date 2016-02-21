@@ -4,9 +4,8 @@ $(document).ready(function(){
 	var totalCorrect = 0;
 	var totalIncorrect = 0;
 	var currentLevel = "M"
-
 	//Pull data from JSON 
-	var questions = getJSONInput()
+	var questions = getJSONInput();
 	
 	//Set the current question
 	var currentQuestion = new Question(questions.QuestionBank[0].Question, questions.QuestionBank[0].Answers.CorrectAnswer, 
@@ -20,9 +19,36 @@ $(document).ready(function(){
 		document.getElementById("thisnode4").innerText = currQuestion.answer3;
 		document.getElementById("thisnode5").innerText = currQuestion.answer4;
 	}
-
-
 	newQuestionText(currentQuestion);
+
+	$("#me").click(function(){
+		var myForm = document.getElementById("myForm");
+		var selectedRadio = myForm["question"]
+		console.log(selectedRadio.value);
+		var selectedAnswer;
+		switch(selectedRadio.value){
+			case 1: break;
+			case 2: break;
+			case 3: break;
+			case 4: break;
+
+		}
+		/*
+		if(document.getElementById("n2").checked){
+			$("#n2").text()
+			console.log(document.getElementById("n2").text())
+		}
+		if(document.getElementById("n3").checked){
+			console.log("YAY3");
+		}
+		if(document.getElementById("n4").checked){
+			console.log("YAY4");
+		}
+		if(document.getElementById("n5").checked){
+			console.log("YAY5");
+		}*/
+	});
+
 	//Constructor for Questions
 	function Question (question, ans1, ans2, ans3, ans4) {
 		this.question = question;
