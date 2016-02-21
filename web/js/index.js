@@ -106,19 +106,19 @@ $(document).ready(function(){
 	function incrementIndex(){
 		switch(currentLevel){
 			case "E": 
-				if(easyIndex < 2)
+				if(easyIndex < 5)
 					easyIndex += 1;
 				else
 					easyIndex = 0;
 				break;
 			case "M": 
-				if(mediumIndex < 2)
+				if(mediumIndex < 5)
 					mediumIndex += 1;
 				else
 					mediumIndex = 0;
 				break;
 			case "H": 
-				if(hardIndex < 2)
+				if(hardIndex < 5)
 					hardIndex += 1;
 				else
 					hardIndex = 0;
@@ -205,7 +205,7 @@ $(document).ready(function(){
 				    "Incorrect2": " Pick ME! ", 
 				    "Incorrect3" : " Sonny " 
 				}
-			    }
+			    },
 
 			    {
 			    "QuestionID":"0003", 
@@ -216,7 +216,7 @@ $(document).ready(function(){
 				    "Incorrect2": " no ", 
 				    "Incorrect3" : " no " 
 				}
-			    }
+			    },
 			 	
 			 	{
 			    "QuestionID":"0004", 
@@ -227,7 +227,7 @@ $(document).ready(function(){
 				    "Incorrect2": " no ", 
 				    "Incorrect3" : " no " 
 				}
-			    }
+			    },
 
 			    {
 			    "QuestionID":"0005", 
@@ -274,7 +274,7 @@ $(document).ready(function(){
 				    "Incorrect2": " F = ma ", 
 				    "Incorrect3" : " Newtons 3rd law of motion " 
 				}
-			    }
+			    },
 
 			    {
 			    "QuestionID":"1003", 
@@ -285,7 +285,7 @@ $(document).ready(function(){
 				    "Incorrect2": " no ", 
 				    "Incorrect3" : " no " 
 				}
-			    }
+			    },
 
 			    {
 			    "QuestionID":"1004", 
@@ -296,7 +296,7 @@ $(document).ready(function(){
 				    "Incorrect2": " no ", 
 				    "Incorrect3" : " no " 
 				}
-			    }
+			    },
 
 			    {
 			    "QuestionID":"1005", 
@@ -343,7 +343,7 @@ $(document).ready(function(){
 				    "Incorrect2": " PV = nRT ", 
 				    "Incorrect3" : " PA = LU factorization " 
 				}
-			    }
+			    },
 
 			    {
 			    "QuestionID":"2003", 
@@ -354,7 +354,7 @@ $(document).ready(function(){
 				    "Incorrect2": " no ", 
 				    "Incorrect3" : " no " 
 				}
-			    }
+			    },
 
 			    {
 			    "QuestionID":"2004", 
@@ -365,7 +365,7 @@ $(document).ready(function(){
 				    "Incorrect2": " no ", 
 				    "Incorrect3" : " no " 
 				}
-			    }
+			    },
 
 			    {
 			    "QuestionID":"2005", 
