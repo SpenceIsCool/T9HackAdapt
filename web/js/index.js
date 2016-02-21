@@ -75,7 +75,7 @@ $(document).ready(function(){
 					upDifficulty();
 				}
 				console.log("Total correct: " + totalCorrect + " Current Diff: " + currentLevel);
-				
+
 				$("input:radio").attr("checked", false);
 
 				updateQuestion();
@@ -83,7 +83,7 @@ $(document).ready(function(){
 			else{
 				document.getElementById("me").innerHTML = " ";
 				document.getElementById("myForm").innerHTML = "You answered: <br />"+ selectedAnswer+"<br /> The correct answer is: <br/>"+currentQuestion.answer1;
-				document.getElementById("corrections").innerHTML = "<div class=\"submit\" id = \"continue\"> <input type=\"image\" src=\"./img/Wrong.png\" name=\"saveForm\" class=\"btSubmit\" id=\"btsub\"  /></div>";
+				document.getElementById("corrections").innerHTML = "<div class=\"submit\" id = \"continue\"> <input type=\"image\" src=\"./img/continue.png\" name=\"saveForm\" class=\"btSubmit\" id=\"btsub\"  /></div>";
 			}
 		}
 		else{}
