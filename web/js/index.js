@@ -22,28 +22,28 @@ $(document).ready(function(){
 		var rand2 = Math.floor(Math.random()*100%4);
 		switch(rand2){
 			case 0: 
-				document.getElementById("thisnode2").innerText = currQuestion.answer1;
-				document.getElementById("thisnode3").innerText = currQuestion.answer2;
-				document.getElementById("thisnode4").innerText = currQuestion.answer3;
-				document.getElementById("thisnode5").innerText = currQuestion.answer4;
+				$("#thisnode2").text(currQuestion.answer1);
+				$("#thisnode3").text(currQuestion.answer2);
+				$("#thisnode4").text(currQuestion.answer3);
+				$("#thisnode5").text(currQuestion.answer4);
 				break;
 			case 1: 
-				document.getElementById("thisnode2").innerText = currQuestion.answer4;
-				document.getElementById("thisnode3").innerText = currQuestion.answer2;
-				document.getElementById("thisnode4").innerText = currQuestion.answer1;
-				document.getElementById("thisnode5").innerText = currQuestion.answer3;
+				$("#thisnode2").text(currQuestion.answer4);
+				$("#thisnode3").text(currQuestion.answer2);
+				$("#thisnode4").text(currQuestion.answer1);
+				$("#thisnode5").text(currQuestion.answer3);
 				break;
 			case 2: 
-				document.getElementById("thisnode2").innerText = currQuestion.answer3;
-				document.getElementById("thisnode3").innerText = currQuestion.answer1;
-				document.getElementById("thisnode4").innerText = currQuestion.answer4;
-				document.getElementById("thisnode5").innerText = currQuestion.answer2;
+				$("#thisnode2").text(currQuestion.answer3);
+				$("#thisnode3").text(currQuestion.answer1);
+				$("#thisnode4").text(currQuestion.answer4);
+				$("#thisnode5").text(currQuestion.answer2);
 				break;
 			case 3: 
-				document.getElementById("thisnode2").innerText = currQuestion.answer3;
-				document.getElementById("thisnode3").innerText = currQuestion.answer2;
-				document.getElementById("thisnode4").innerText = currQuestion.answer4;
-				document.getElementById("thisnode5").innerText = currQuestion.answer1;
+				$("#thisnode2").text(currQuestion.answer3);
+				$("#thisnode3").text(currQuestion.answer2);
+				$("#thisnode4").text(currQuestion.answer4);
+				$("#thisnode5").text(currQuestion.answer1);
 				break;
 		}
 	}
