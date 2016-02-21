@@ -1,0 +1,39 @@
+ul.feedback {
+    list-style-type: none;
+	margin: 0;
+	padding: 0;
+	height: 45px;
+	overflow: hidden;
+	background-color: #f5f3f5;}
+ul.answers {
+	margin: 0;
+	padding: 0;
+	height: 300px;
+	background-color: #ffffff;}
+li {
+	float: left;}
+li.a {
+	display: inline-block;
+	padding: 10px 10px;}
+li.b {
+	display: inline-block;
+	padding: 25px 0px;}
+body {
+	font-family: Arial, Verdana, sans-serif;
+	color: #000000;
+	padding: 5px 0px;
+	margin: 0 auto;}
+.titleBar {
+	background-color: #ffffff;
+	height: 40px;
+	padding: 1px }
+.questionBox {
+	background-color: #ffffff;
+	width: 680px;
+	height: 380px;
+	padding: 25px;
+	margin: 25px 80px;}
+.answerBox {
+	width: 630px;
+	height: 300px;
+	margin: 20px 20px;}

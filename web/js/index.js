@@ -4,13 +4,16 @@ $(document).ready(function(){
 	var totalCorrect = 0;
 	var totalIncorrect = 0;
 	var currentLevel = "M"
+	var easyIndex = 0;
+	var mediumIndex = 0;
+	var hardIndex = 0;
+
 	//Pull data from JSON 
 	var questions = getJSONInput();
 	
 	//Set the current question
-	var currentQuestion = new Question(questions.QuestionBank.EasyBank[0].Question, questions.QuestionBank.EasyBank[0].Answers.CorrectAnswer, 
-		questions.QuestionBank.EasyBank[0].Answers.Incorrect1, questions.QuestionBank.EasyBank[0].Answers.Incorrect2, questions.QuestionBank.EasyBank[0].Answers.Incorrect3);
-	
+	var currentQuestion = new Question(questions.QuestionBank.MediumBank[0].Question, questions.QuestionBank.MediumBank[0].Answers.CorrectAnswer, 
+		questions.QuestionBank.MediumBank[0].Answers.Incorrect1, questions.QuestionBank.MediumBank[0].Answers.Incorrect2, questions.QuestionBank.MediumBank[0].Answers.Incorrect3);
 	var CorrectAnswer = currentQuestion.answer1;
 
 	function newQuestionText(currQuestion){
@@ -45,12 +48,14 @@ $(document).ready(function(){
 	}
 	newQuestionText(currentQuestion);
 
+	//when submit is clicked
 	$("#me").click(function(){
 		var myForm = document.getElementById("myForm");
 		var selectedRadio = myForm["question"]
-		//console.log(selectedRadio.value);
 		var selectedAnswer;
-		//console.log(document.getElementById("thisnode2").textContent)
+		//increment question index to pull appropriate q from bank
+		incrementIndex();
+
 		switch(Number(selectedRadio.value)){
 			case 1: selectedAnswer = document.getElementById("thisnode2").textContent;
 				break;
@@ -74,9 +79,52 @@ $(document).ready(function(){
 			if(totalIncorrect >= 3){
 				downDifficulty();
 			}
-			console.log("Total incorrect: " + totalIncorrect);
+			console.log("Total incorrect: " + totalIncorrect+ " Current Diff: " + currentLevel);
 		}
+
+		updateQuestion();
 	});
+	
+	function updateQuestion(){
+		switch(currentLevel){
+			case "E": 
+				currentQuestion = new Question(questions.QuestionBank.EasyBank[easyIndex].Question, questions.QuestionBank.EasyBank[easyIndex].Answers.CorrectAnswer,
+					questions.QuestionBank.EasyBank[easyIndex].Answers.Incorrect1,questions.QuestionBank.EasyBank[easyIndex].Answers.Incorrect2, questions.QuestionBank.EasyBank[easyIndex].Answers.Incorrect3)
+				break;
+			case "M": 
+				currentQuestion = new Question(questions.QuestionBank.MediumBank[mediumIndex].Question, questions.QuestionBank.MediumBank[mediumIndex].Answers.CorrectAnswer,
+					questions.QuestionBank.MediumBank[mediumIndex].Answers.Incorrect1,questions.QuestionBank.MediumBank[mediumIndex].Answers.Incorrect2, questions.QuestionBank.MediumBank[mediumIndex].Answers.Incorrect3)
+				break;
+			case "H": 
+				currentQuestion = new Question(questions.QuestionBank.HardBank[hardIndex].Question, questions.QuestionBank.HardBank[hardIndex].Answers.CorrectAnswer,
+					questions.QuestionBank.HardBank[hardIndex].Answers.Incorrect1,questions.QuestionBank.HardBank[hardIndex].Answers.Incorrect2, questions.QuestionBank.HardBank[hardIndex].Answers.Incorrect3)
+				break;
+		}
+		newQuestionText(currentQuestion);
+	}
+
+	function incrementIndex(){
+		switch(currentLevel){
+			case "E": 
+				if(easyIndex < 2)
+					easyIndex += 1;
+				else
+					easyIndex = 0;
+				break;
+			case "M": 
+				if(mediumIndex < 2)
+					mediumIndex += 1;
+				else
+					mediumIndex = 0;
+				break;
+			case "H": 
+				if(hardIndex < 2)
+					hardIndex += 1;
+				else
+					hardIndex = 0;
+				break;
+		}
+	}
 
 	function upDifficulty(){
 		totalCorrect = 0;
@@ -232,9 +280,8 @@ $(document).ready(function(){
 		}
 		}
 
-	return temp;
+		return temp;
 	}
 });
-
-
+	
 
