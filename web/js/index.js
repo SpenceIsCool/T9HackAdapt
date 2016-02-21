@@ -233,7 +233,8 @@ $(document).ready(function(){
 				    "Incorrect1": " x == 1", 
 				    "Incorrect2": " int x == 1", 
 				    "Incorrect3" : " 1 = x " 
-				}
+				}, 
+				"Feedback": " A single '=' is used for assignment"
 				},
 
 				{
@@ -244,18 +245,20 @@ $(document).ready(function(){
 				    "Incorrect1": " x = 1", 
 				    "Incorrect2": " int x == 1", 
 				    "Incorrect3" : " 1 = x " 
-				}
+				},
+				"Feedback": " The '==' is used for comparison of elements."
 			    },
 
 			    {
 			    "QuestionID":"0002", 
-			    "Question":" Easy question of all questions?",
+			    "Question":" Which of the folowing is a string?",
 			    "Answers":{
-				    "CorrectAnswer": " BOOM! ", 
-				    "Incorrect1": " b explode bomb", 
-				    "Incorrect2": " Pick ME! ", 
-				    "Incorrect3" : " Sonny " 
-				}
+				    "CorrectAnswer": " '1.00' ", 
+				    "Incorrect1": " 0 ", 
+				    "Incorrect2": " 1.00 ", 
+				    "Incorrect3" : " True " 
+				},
+				"Feedback": " There are many ways to create strings in python. Common ways are the use of '' or \"\"."
 			    },
 
 			    {
@@ -265,8 +268,9 @@ $(document).ready(function(){
 				    "CorrectAnswer": " print \"hello world\"", 
 				    "Incorrect1": " console.log \"hello world\"", 
 				    "Incorrect2": " cout << \"hello world\"", 
-				    "Incorrect3" : " disp (\"hello world\")" 
-				}
+				    "Incorrect3" : " system.out.println (\"hello world\")" 
+				},
+				"Feedback": " print is used to display to the standard output stream."
 			    },
 			 	
 			 	{
@@ -277,7 +281,8 @@ $(document).ready(function(){
 				    "Incorrect1": " ==", 
 				    "Incorrect2": " ~= ", 
 				    "Incorrect3" : " <> " 
-				}
+				},
+				"Feedback": " In python: '!', prononced \"bang\", is used to preform NOT."
 			    },
 
 			    {
@@ -288,7 +293,8 @@ $(document).ready(function(){
 				    "Incorrect1": " // end line comment", 
 				    "Incorrect2": " % end line comment ", 
 				    "Incorrect3" : " * end line comment " 
-				}
+				},
+				"Feedback": " In python: '#', often called 'sharp', is used to create comments."
 			    }
 			],
 
@@ -302,18 +308,20 @@ $(document).ready(function(){
 				     "Incorrect1": " x = 2", 
 				     "Incorrect2": " x == 2", 
 				     "Incorrect3" : " print \"hello world\"" 
-				}
+				},
+				"Feedback": " The '==' is used for comparison of elements."
 			    },
 
 			    {
 			    "QuestionID":"1001", 
-			    "Question":" Which of the folowing returns 0?",
+			    "Question":" For x = 0, which of the folling prints -1?",
 			    "Answers":{
-				     "CorrectAnswer": " 0 if true else 1", 
-				     "Incorrect1": " 1 if true else 0", 
-				     "Incorrect2": " x = 0 ", 
-				     "Incorrect3" : " if 0: 1 " 
-				 }
+				     "CorrectAnswer": " print x -=1 ", 
+				     "Incorrect1": " x = x - 1", 
+				     "Incorrect2": " print '0-1'", 
+				     "Incorrect3" : " -1 " 
+				 },
+				"Feedback": " The '==' is used for comparison of elements."
 			     },
 
 			    {
@@ -324,7 +332,8 @@ $(document).ready(function(){
 				    "Incorrect1": " function f_name ()", 
 				    "Incorrect2": " void f_name () ", 
 				    "Incorrect3" : " const f_name = funciton () " 
-				}
+				},
+				"Feedback": " The key term 'def' is used in function declarations in Python."
 			    },
 
 			    {
@@ -333,9 +342,10 @@ $(document).ready(function(){
 			    "Answers":{
 				    "CorrectAnswer": " return x", 
 				    "Incorrect1": " output = x", 
-				    "Incorrect2": " sto x ", 
+				    "Incorrect2": " x ", 
 				    "Incorrect3" : " print ( x ) " 
-				}
+				},
+				"Feedback": " The key term 'return' is used to return a funciton's value in Python."
 			    },
 
 			    {
@@ -346,7 +356,8 @@ $(document).ready(function(){
 				    "Incorrect1": " 1, 1", 
 				    "Incorrect2": " A, B ", 
 				    "Incorrect3" : " 0, 0 " 
-				}
+				},
+				"Feedback": " The Fibonacci Sequence has 2 base casses. fib(0) = 0, fib(1) = 1."
 			    },
 
 			    {
@@ -357,7 +368,8 @@ $(document).ready(function(){
 				    "Incorrect1": " x % 2 == 1", 
 				    "Incorrect2": " x / 2 == 0", 
 				    "Incorrect3" : " x / 2 == 1 " 
-				}
+				},
+				"Feedback": " The modulus opererator '%' is used to find the remainder of division."
 			    }
 			],
 
@@ -371,7 +383,8 @@ $(document).ready(function(){
 				     "Incorrect1": " print  \"The value of x is:\" + x ", 
 				     "Incorrect2": " y = \"The value of x is: {}\".format(x)", 
 				     "Incorrect3" : " y =  print  \"The value of x is:\" + xs" 
-				 }
+				 },
+				"Feedback": " 'string'.format(_) can be used to insert values into a string see documentation online."
 				 },
 
 				{
@@ -382,7 +395,8 @@ $(document).ready(function(){
 				     "Incorrect1": " /* multi line comment */ ", 
 				     "Incorrect2": " <!-- multi line comment -->", 
 				     "Incorrect3" : " # multi line comment " 
-				}
+				},
+				"Feedback": " 3 \" are used to produce multiline and inline comments in Python."
 			    },
 
 			    {
@@ -393,7 +407,8 @@ $(document).ready(function(){
 				     "Incorrect1": " 1 if true else 0", 
 				     "Incorrect2": " x = 0 ", 
 				     "Incorrect3" : " if 0: 1 " 
-				 }
+				 },
+				"Feedback": " <isTrue> if <condition> else <isFalse> is the format for the terinary operator in Python."
 			     },
 
 			    {
@@ -404,29 +419,32 @@ $(document).ready(function(){
 				    "Incorrect1": " anonomous functions", 
 				    "Incorrect2": " well defined variables names", 
 				    "Incorrect3" : " lots of comments " 
-				}
+				},
+				"Feedback": " Named functions - at some level - are required to impliment recursion in Python."
 			    },
 
 			    {
 			    "QuestionID":"2004", 
-			    "Question":" Suppose I have a list: \"myList\" and I'd like to itterate over its elliments. What is one way to accomplish this?",
+			    "Question":" Suppose I have a list: \"myList\" and I'd like to itterate over its elements. What is one way to accomplish this?",
 			    "Answers":{
 				    "CorrectAnswer": " for i in myList:", 
 				    "Incorrect1": " for i in range myList:", 
 				    "Incorrect2": " while myList: ", 
 				    "Incorrect3" : " myList = x " 
-				}
+				},
+				"Feedback": " Here: i will represent the ith element of myList at each pass through our for loop."
 			    },
 
 			    {
 			    "QuestionID":"2005", 
-			    "Question":" Which Python library stores the value of the natural number pi?",
+			    "Question":" What sort of language is Python?",
 			    "Answers":{
-				    "CorrectAnswer": " math", 
-				    "Incorrect1": " bakery", 
-				    "Incorrect2": " pi ", 
-				    "Incorrect3" : " numbers " 
-				}
+				    "CorrectAnswer": " Scripting", 
+				    "Incorrect1": " Compiled", 
+				    "Incorrect2": " Strictly Functional ", 
+				    "Incorrect3" : " Strictly Imperative" 
+				},
+				"Feedback": " Python is a Scripting language."
 			    }
 			]
 		}
