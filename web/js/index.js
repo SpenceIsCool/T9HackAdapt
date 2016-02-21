@@ -85,7 +85,7 @@ $(document).ready(function(){
 				document.getElementById("me").innerHTML = " ";
 				document.getElementById("myForm").innerHTML = "You answered: <br />"+ selectedAnswer+"<br /> The correct answer is: <br/>"+currentQuestion.answer1 + "<br/> Please also note that: <br/>" + currentQuestion.feedback;
 				document.getElementById("corrections").innerHTML = "<div class=\"submit\" id = \"continue\"> <input type=\"image\" src=\"./img/continue.png\" name=\"saveForm\" class=\"btSubmit\" id=\"btsub\"  /></div>";
-				endSummary.push(currentQuestion.question + "<br /> You answered: <br />"+ selectedAnswer+"<br /> The correct answer is: <br/>"+currentQuestion.answer1 + "<br/> Please also note that: <br/>" + currentQuestion.feedback + "<br/><br/>")
+				endSummary.push(currentQuestion.question + "<br /> You answered: <br />"+ selectedAnswer+"<br /> The correct answer is: <br/>"+currentQuestion.answer1 + "<br/> Please also note that: <br/>" + currentQuestion.feedback + "<br/><br/>");
 			}
 		}
 		else{}
@@ -165,7 +165,7 @@ $(document).ready(function(){
 			case "E": 
 				totalCorrect = 0;
 				totalIncorrect = 0;
-				document.getElementById("med").innerText = "Intermediate";
+				document.getElementById("med").innerText = "Medium";
 				document.getElementById("easy").innerText = " ";
 				document.getElementById("correctIncorrect").innerHTML = " ";
 				currentLevel = "M";
@@ -175,7 +175,7 @@ $(document).ready(function(){
 				totalCorrect = 0;
 				totalIncorrect = 0;
 				document.getElementById("med").innerText = " "
-				document.getElementById("hard").innerText = "Proficient"
+				document.getElementById("hard").innerText = "Hard"
 				document.getElementById("correctIncorrect").innerHTML = " ";
 				currentLevel = "H";
 				// document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyHard.jpg\" alt=\"icon\" />";
@@ -200,7 +200,7 @@ $(document).ready(function(){
 				totalIncorrect = 0; 
 				currentLevel = "E";
 				document.getElementById("med").innerText = " "
-				document.getElementById("easy").innerText = "Beginner"
+				document.getElementById("easy").innerText = "Easy"
 				document.getElementById("correctIncorrect").innerHTML = " ";
 				// document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyEasy.jpg\" alt=\"icon\" />";
 				break;
@@ -209,7 +209,7 @@ $(document).ready(function(){
 				totalCorrect = 0;
 				totalIncorrect = 0;
 				document.getElementById("hard").innerText = " "
-				document.getElementById("med").innerText = "Intermediate"
+				document.getElementById("med").innerText = "Easy"
 				document.getElementById("correctIncorrect").innerHTML = " ";
 				// document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyMed.jpg\" alt=\"icon\" />";
 				break;
@@ -221,7 +221,7 @@ $(document).ready(function(){
 		for (var i = 0 ; i < endSummary.length; i++)
 			document.getElementById("endSummary").innerHTML += endSummary[i]
 		if (endSummary.length == 0) document.getElementById("endSummary").innerHTML += 	"<img src=\"./img/Logo2.png\" alt=\"logo, congrats you won!\" />";
-
+		document.getElementById("endSummary").innerHTML += "<div class=\"submit\" id = \"continue\"> <input type=\"image\" src=\"./img/restart.png\" name=\"saveForm\" class=\"btSubmit\" id=\"btsub\"  /></div>";
 	}
 
 
@@ -392,7 +392,7 @@ $(document).ready(function(){
 
 				{
 			    "QuestionID":"2000", 
-			    "Question":"Which of the following will display the value of x and a descriptive string to the standard output if x is an integer?",
+			    "Question":"In python 2.7, which of the following will concatinate a string with an integer?",
 			    "Answers":{
 				     "CorrectAnswer": " print \"The value of x is: {}\".format(x) ", 
 				     "Incorrect1": " print  \"The value of x is:\" + x ", 
