@@ -1,0 +1,29 @@
+*,
+*:before,
+*:after{
+	margin:0;
+	padding:0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.option1{
+	background: #053776;
+}
+.option2{
+	background: #11ff22;
+}
+.clearfix:after{
+	display: table;
+	content: " ";
+	/*left right or both*/
+	clear: both;
+}
+.left {
+	float: left;
+	margin-right: 0px;
+}
+.right{
+	float:left;
+	margin-left: 50px;
+}
