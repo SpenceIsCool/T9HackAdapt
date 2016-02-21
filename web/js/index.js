@@ -132,9 +132,11 @@ $(document).ready(function(){
 		switch(currentLevel){
 			case "E": 
 				currentLevel = "M";
+				document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyMed.jpg\" alt=\"icon\" />";
 				break;
 			case "M": 
 				currentLevel = "H";
+				document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyHard.jpg\" alt=\"icon\" />";
 				break;
 			case "H": 
 				break;
@@ -149,9 +151,11 @@ $(document).ready(function(){
 				break;
 			case "M": 
 				currentLevel = "E";
+				document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyEasy.jpg\" alt=\"icon\" />";
 				break;
 			case "H": 
 				currentLevel = "M";
+				document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyMed.jpg\" alt=\"icon\" />";
 				break;
 		}
 	}
