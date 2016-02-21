@@ -90,11 +90,12 @@ $(document).ready(function(){
 				if(totalIncorrect >= 3){
 					downDifficulty();
 				}
+				endSummary.push("<div class=\" endSolnWell\"><div class = \"endSolnQ\">"+currentQuestion.question + "</div><br /><span class = \"endSolnQ\"> You answered: </span>"+ selectedAnswer+"<br /><span class = \"endSolnQ\"> The correct answer is:</span> "+currentQuestion.answer1 + "<br /><br/><div class = \"endSolnQ\"> Please also note that: </div>" + currentQuestion.feedback + "</div><br/><br/>");
 			}
 			$("input:radio").attr("checked", false);
 			updateQuestion();
 
-			endSummary.push("<div class=\" endSolnWell\"><div class = \"endSolnQ\">"+currentQuestion.question + "</div><br /><span class = \"endSolnQ\"> You answered: </span>"+ selectedAnswer+"<br /><span class = \"endSolnQ\"> The correct answer is:</span> "+currentQuestion.answer1 + "<br /><br/><div class = \"endSolnQ\"> Please also note that: </div>" + currentQuestion.feedback + "</div><br/><br/>");
+			
 		}
 		else{}
 	});
