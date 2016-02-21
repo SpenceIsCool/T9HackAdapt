@@ -69,6 +69,7 @@ $(document).ready(function(){
 		}
 		if(selectedAnswer == currentQuestion.answer1){
 			totalCorrect += 1;
+			//document.getElementById("").innerHTML = "<img src=\"./img/DifficultyMed.jpg\" alt=\"icon\" />";
 			if(totalCorrect >= 3){
 				upDifficulty();
 			}
