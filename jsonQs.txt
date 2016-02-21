@@ -1,0 +1,38 @@
+{"QuestionBank":[
+
+    {
+    "QuestionID":"000", 
+    "Difficulty":"Medium", 
+    Question":"In Python, what is the command to display hello world to the standard output?",
+    "Answers":{
+	     "CorrectAnswer": "print \"hello world\"", 
+	     "Incorrect1": "console.log \"hello world\"", 
+	     "Incorrect2": "cout << \"hello world\"", 
+	     "Incorrect3" : "disp (\"hello world\")" 
+	 }
+     },
+
+    {
+    "QuestionID":"001", 
+    "Difficulty":"Easy", 
+    "Question":"How do I store the value 1 to the variable x in python?",
+    "Answers":{
+	     "CorrectAnswer": "x = 1", 
+	     "Incorrect1": "x == 1", 
+	     "Incorrect2": "int x == 1", 
+	     "Incorrect3" : " 1 = x " 
+	 }
+	 },
+
+	 {
+    "QuestionID":"002", 
+    "Difficulty":"Hard", 
+    "Question":"which of the following will display the value of x and a descriptive string to the standard output if x is a string?",
+    "Answers":{
+	     "CorrectAnswer": "print \"The value of x is: {}\".format(x) ", 
+	     "Incorrect1": "print  \"The value of x is:\" + x ", 
+	     "Incorrect2": "y = \"The value of x is: {}\".format(x)", 
+	     "Incorrect3" : " y =  print  \"The value of x is:\" + xs" 
+	 }
+	 },
+]}
