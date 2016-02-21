@@ -54,37 +54,41 @@ $(document).ready(function(){
 		var selectedRadio = myForm["question"]
 		var selectedAnswer;
 		//increment question index to pull appropriate q from bank
-		incrementIndex();
+		if (document.getElementById("q1a").checked || document.getElementById("q1b").checked || document.getElementById("q1c").checked || document.getElementById("q1d").checked){
+			incrementIndex();
 
-		switch(Number(selectedRadio.value)){
-			case 1: selectedAnswer = document.getElementById("thisnode2").textContent;
-				break;
-			case 2: selectedAnswer = document.getElementById("thisnode3").textContent;
-				break;
-			case 3: selectedAnswer = document.getElementById("thisnode4").textContent;
-				break;
-			case 4: selectedAnswer = document.getElementById("thisnode5").textContent;
-				break;
+			switch(Number(selectedRadio.value)){
+				case 1: selectedAnswer = document.getElementById("thisnode2").textContent;
+					break;
+				case 2: selectedAnswer = document.getElementById("thisnode3").textContent;
+					break;
+				case 3: selectedAnswer = document.getElementById("thisnode4").textContent;
+					break;
+				case 4: selectedAnswer = document.getElementById("thisnode5").textContent;
+					break;
 
-		}
-		if(selectedAnswer == currentQuestion.answer1){
-			totalCorrect += 1;
-			document.getElementById("correctIncorrect").innerHTML += "<li class=\"b\" id=\"f2\"><img src=\"./img/Correct.png\" alt=\"icon\" /></li>";
-			if(totalCorrect >= 3){
-				upDifficulty();
 			}
-			console.log("Total correct: " + totalCorrect + " Current Diff: " + currentLevel);
-		}
-		else{
-			totalIncorrect += 1;
-			document.getElementById("correctIncorrect").innerHTML += "<li class=\"b\" id=\"f2\"><img src=\"./img/Wrong.png\" alt=\"icon\" /></li>";
-			if(totalIncorrect >= 3){
-				downDifficulty();
+			if(selectedAnswer == currentQuestion.answer1){
+				totalCorrect += 1;
+				document.getElementById("correctIncorrect").innerHTML += "<li class=\"b\" id=\"f2\"><img src=\"./img/Correct.png\" alt=\"icon\" /></li>";
+				if(totalCorrect >= 3){
+					upDifficulty();
+				}
+				console.log("Total correct: " + totalCorrect + " Current Diff: " + currentLevel);
 			}
-			console.log("Total incorrect: " + totalIncorrect+ " Current Diff: " + currentLevel);
+			else{
+				totalIncorrect += 1;
+				document.getElementById("correctIncorrect").innerHTML += "<li class=\"b\" id=\"f2\"><img src=\"./img/Wrong.png\" alt=\"icon\" /></li>";
+				if(totalIncorrect >= 3){
+					downDifficulty();
+				}
+				console.log("Total incorrect: " + totalIncorrect+ " Current Diff: " + currentLevel);
+			}
+			$("input:radio").attr("checked", false);
+
+			updateQuestion();
 		}
-		$("input:radio").attr("checked", false);
-		updateQuestion();
+		else{}
 	});
 	
 	function updateQuestion(){

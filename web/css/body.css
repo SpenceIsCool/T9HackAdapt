@@ -7,11 +7,37 @@
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
-ul.feedback {
+
+.easy{
+	margin-left: 5%;
+	width: 30%;
+	background-color: rgba(00,00,00, 1);
+	height: 100%;
+	float: left;
+	position: inline;
+}
+.med{
+	width: 30%;
+	background-color: blue;
+	height: 100%;
+	float: left;
+	position: inline;
+}
+
+.hard{
+	width: 30%;
+	height: 100%;
+	float: left;
+	position: inline;
+	background-color: green;
+}
+
+.feedback {
     list-style-type: none;
 	margin: 0;
 	padding: 0;
 	height: 45px;
+	text-align: center;
 	overflow: hidden;
 	background-color: #f5f3f5;}
 ul.answers {
