@@ -83,7 +83,7 @@ $(document).ready(function(){
 			}
 			console.log("Total incorrect: " + totalIncorrect+ " Current Diff: " + currentLevel);
 		}
-
+		$("input:radio").attr("checked", false);
 		updateQuestion();
 	});
 	
