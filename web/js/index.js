@@ -69,7 +69,7 @@ $(document).ready(function(){
 		}
 		if(selectedAnswer == currentQuestion.answer1){
 			totalCorrect += 1;
-			//document.getElementById("").innerHTML = "<img src=\"./img/DifficultyMed.jpg\" alt=\"icon\" />";
+			document.getElementById("correctIncorrect").innerHTML += "<li class=\"b\" id=\"f2\"><img src=\"./img/Correct.png\" alt=\"icon\" /></li>";
 			if(totalCorrect >= 3){
 				upDifficulty();
 			}
@@ -77,12 +77,13 @@ $(document).ready(function(){
 		}
 		else{
 			totalIncorrect += 1;
+			document.getElementById("correctIncorrect").innerHTML += "<li class=\"b\" id=\"f2\"><img src=\"./img/Wrong.png\" alt=\"icon\" /></li>";
 			if(totalIncorrect >= 3){
 				downDifficulty();
 			}
 			console.log("Total incorrect: " + totalIncorrect+ " Current Diff: " + currentLevel);
 		}
-
+		$("input:radio").attr("checked", false);
 		updateQuestion();
 	});
 	
@@ -128,36 +129,67 @@ $(document).ready(function(){
 	}
 
 	function upDifficulty(){
+<<<<<<< HEAD
 		totalCorrect = 0;
 		totalIncorrect = 0;
 		totalAnswered = 0;
 		clearTrack();
+=======
+		
+>>>>>>> f070edd606f5086ed68fe846abee0f25aae4a8f3
 		switch(currentLevel){
+			case "H": 
+				if((totalIncorrect + totalCorrect) <= 5){
+
+				}
+				else{
+					totalCorrect = 0;
+					totalIncorrect = 0;
+					document.getElementById("correctIncorrect").innerHTML = " ";
+				}
+				break;
 			case "E": 
+				totalCorrect = 0;
+				totalIncorrect = 0;
+				document.getElementById("correctIncorrect").innerHTML = " ";
 				currentLevel = "M";
 				document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyMed.jpg\" alt=\"icon\" />";
 				break;
 			case "M": 
+				totalCorrect = 0;
+				totalIncorrect = 0;
+				document.getElementById("correctIncorrect").innerHTML = " ";
 				currentLevel = "H";
 				document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyHard.jpg\" alt=\"icon\" />";
 				break;
-			case "H": 
-				break;
+			
 		}
 	}
 
 	function downDifficulty(){
-		totalCorrect = 0;
-		totalIncorrect = 0;
 		switch(currentLevel){
 			case "E": 
+				if((totalIncorrect + totalCorrect)<= 5){
+
+				}
+				else{
+					totalCorrect = 0;
+					totalIncorrect = 0;
+					document.getElementById("correctIncorrect").innerHTML = " ";
+				}
 				break;
-			case "M": 
+			case "M":
+				totalCorrect = 0;
+				totalIncorrect = 0; 
 				currentLevel = "E";
+				document.getElementById("correctIncorrect").innerHTML = " ";
 				document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyEasy.jpg\" alt=\"icon\" />";
 				break;
 			case "H": 
 				currentLevel = "M";
+				totalCorrect = 0;
+				totalIncorrect = 0;
+				document.getElementById("correctIncorrect").innerHTML = " ";
 				document.getElementById("difficultyImage").innerHTML = "<img src=\"./img/DifficultyMed.jpg\" alt=\"icon\" />";
 				break;
 		}
