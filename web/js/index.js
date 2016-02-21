@@ -83,9 +83,10 @@ $(document).ready(function(){
 			}
 			else{
 				document.getElementById("me").innerHTML = " ";
-				document.getElementById("myForm").innerHTML = "You answered: <br />"+ selectedAnswer+"<br /> The correct answer is: <br/>"+currentQuestion.answer1 + "<br/> Please also note that: <br/>" + currentQuestion.feedback;
+				document.getElementById("thisnode").innerHTML = " ";
+				document.getElementById("myForm").innerHTML = "<div class=\" endSolnWell\"><div class = \"endSolnQ\">"+currentQuestion.question + "</div><br /><span class = \"endSolnQ\"> You answered: </span>"+ selectedAnswer+"<br /><span class = \"endSolnQ\"> The correct answer is:</span> "+currentQuestion.answer1 + "<br /><br/><div class = \"endSolnQ\"> Please also note that: </div>" + currentQuestion.feedback + "</div><br/><br/>";
 				document.getElementById("corrections").innerHTML = "<div class=\"submit\" id = \"continue\"> <input type=\"image\" src=\"./img/continue.png\" name=\"saveForm\" class=\"btSubmit\" id=\"btsub\"  /></div>";
-				endSummary.push(currentQuestion.question + "<br /> You answered: <br />"+ selectedAnswer+"<br /> The correct answer is: <br/>"+currentQuestion.answer1 + "<br/> Please also note that: <br/>" + currentQuestion.feedback + "<br/><br/>");
+				endSummary.push("<div class=\" endSolnWell\"><div class = \"endSolnQ\">"+currentQuestion.question + "</div><br /><span class = \"endSolnQ\"> You answered: </span>"+ selectedAnswer+"<br /><span class = \"endSolnQ\"> The correct answer is:</span> "+currentQuestion.answer1 + "<br /><br/><div class = \"endSolnQ\"> Please also note that: </div>" + currentQuestion.feedback + "</div><br/><br/>");
 			}
 		}
 		else{}
