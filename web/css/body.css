@@ -8,28 +8,34 @@
 	box-sizing: border-box;
 }
 
-.easy{
+#easy{
 	margin-left: 5%;
 	width: 30%;
-	background-color: rgba(00,00,00, 1);
+	background-color: rgba(137,176,193, 1);
 	height: 100%;
+	font-size: 36px;
+	color: white;
 	float: left;
 	position: inline;
 }
-.med{
+#med{
 	width: 30%;
-	background-color: blue;
+	background-color: rgba(98,113,146, 1);
 	height: 100%;
+	font-size: 36px;
+	color: white;
 	float: left;
 	position: inline;
 }
 
-.hard{
+#hard{
 	width: 30%;
 	height: 100%;
+	font-size: 36px;
+	color: white;
 	float: left;
 	position: inline;
-	background-color: green;
+	background-color: rgba(73,66,97, 1);
 }
 
 .feedback {
@@ -60,7 +66,7 @@ body {
 	margin: 0 auto;}
 .titleBar {
 	background-color: #ffffff;
-	height: 40px;
+	height: 43px;
 	padding: 1px }
 .questionBox {
 	background-color: #ffffff;
