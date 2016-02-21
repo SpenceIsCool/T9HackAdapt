@@ -10,44 +10,102 @@ $(document).ready(function(){
 	//Set the current question
 	var currentQuestion = new Question(questions.QuestionBank[0].Question, questions.QuestionBank[0].Answers.CorrectAnswer, 
 		questions.QuestionBank[0].Answers.Incorrect1, questions.QuestionBank[0].Answers.Incorrect2, questions.QuestionBank[0].Answers.Incorrect3);
-
+	var CorrectAnswer = currentQuestion.answer1;
 
 	function newQuestionText(currQuestion){
 		document.getElementById("thisnode").innerText = currQuestion.question;
-		document.getElementById("thisnode2").innerText = currQuestion.answer1;
-		document.getElementById("thisnode3").innerText = currQuestion.answer2;
-		document.getElementById("thisnode4").innerText = currQuestion.answer3;
-		document.getElementById("thisnode5").innerText = currQuestion.answer4;
+		var rand2 = Math.floor(Math.random()*100%4);
+		switch(rand2){
+			case 0: 
+				document.getElementById("thisnode2").innerText = currQuestion.answer1;
+				document.getElementById("thisnode3").innerText = currQuestion.answer2;
+				document.getElementById("thisnode4").innerText = currQuestion.answer3;
+				document.getElementById("thisnode5").innerText = currQuestion.answer4;
+				break;
+			case 1: 
+				document.getElementById("thisnode2").innerText = currQuestion.answer4;
+				document.getElementById("thisnode3").innerText = currQuestion.answer2;
+				document.getElementById("thisnode4").innerText = currQuestion.answer1;
+				document.getElementById("thisnode5").innerText = currQuestion.answer3;
+				break;
+			case 2: 
+				document.getElementById("thisnode2").innerText = currQuestion.answer3;
+				document.getElementById("thisnode3").innerText = currQuestion.answer1;
+				document.getElementById("thisnode4").innerText = currQuestion.answer4;
+				document.getElementById("thisnode5").innerText = currQuestion.answer2;
+				break;
+			case 3: 
+				document.getElementById("thisnode2").innerText = currQuestion.answer3;
+				document.getElementById("thisnode3").innerText = currQuestion.answer2;
+				document.getElementById("thisnode4").innerText = currQuestion.answer4;
+				document.getElementById("thisnode5").innerText = currQuestion.answer1;
+				break;
+		}
 	}
 	newQuestionText(currentQuestion);
 
 	$("#me").click(function(){
 		var myForm = document.getElementById("myForm");
 		var selectedRadio = myForm["question"]
-		console.log(selectedRadio.value);
+		//console.log(selectedRadio.value);
 		var selectedAnswer;
-		switch(selectedRadio.value){
-			case 1: break;
-			case 2: break;
-			case 3: break;
-			case 4: break;
+		//console.log(document.getElementById("thisnode2").textContent)
+		switch(Number(selectedRadio.value)){
+			case 1: selectedAnswer = document.getElementById("thisnode2").textContent;
+				break;
+			case 2: selectedAnswer = document.getElementById("thisnode3").textContent;
+				break;
+			case 3: selectedAnswer = document.getElementById("thisnode4").textContent;
+				break;
+			case 4: selectedAnswer = document.getElementById("thisnode5").textContent;
+				break;
 
 		}
-		/*
-		if(document.getElementById("n2").checked){
-			$("#n2").text()
-			console.log(document.getElementById("n2").text())
+		if(selectedAnswer == currentQuestion.answer1){
+			totalCorrect += 1;
+			if(totalCorrect >= 3){
+				upDifficulty();
+			}
+			console.log("Total correct: " + totalCorrect + " Current Diff: " + currentLevel);
 		}
-		if(document.getElementById("n3").checked){
-			console.log("YAY3");
+		else{
+			totalIncorrect += 1;
+			if(totalIncorrect >= 3){
+				downDifficulty();
+			}
+			console.log("Total incorrect: " + totalIncorrect);
 		}
-		if(document.getElementById("n4").checked){
-			console.log("YAY4");
-		}
-		if(document.getElementById("n5").checked){
-			console.log("YAY5");
-		}*/
 	});
+
+	function upDifficulty(){
+		totalCorrect = 0;
+		totalIncorrect = 0;
+		switch(currentLevel){
+			case "E": 
+				currentLevel = "M";
+				break;
+			case "M": 
+				currentLevel = "H";
+				break;
+			case "H": 
+				break;
+		}
+	}
+
+	function downDifficulty(){
+		totalCorrect = 0;
+		totalIncorrect = 0;
+		switch(currentLevel){
+			case "E": 
+				break;
+			case "M": 
+				currentLevel = "E";
+				break;
+			case "H": 
+				currentLevel = "M";
+				break;
+		}
+	}
 
 	//Constructor for Questions
 	function Question (question, ans1, ans2, ans3, ans4) {
