@@ -85,7 +85,7 @@ $(document).ready(function(){
 				document.getElementById("me").innerHTML = " ";
 				document.getElementById("myForm").innerHTML = "You answered: <br />"+ selectedAnswer+"<br /> The correct answer is: <br/>"+currentQuestion.answer1 + "<br/> Please also note that: <br/>" + currentQuestion.feedback;
 				document.getElementById("corrections").innerHTML = "<div class=\"submit\" id = \"continue\"> <input type=\"image\" src=\"./img/continue.png\" name=\"saveForm\" class=\"btSubmit\" id=\"btsub\"  /></div>";
-				endSummary.push(currentQuestion.question + "<br /> You answered: <br />"+ selectedAnswer+"<br /> The correct answer is: <br/>"+currentQuestion.answer1 + "<br/> Please also note that: <br/>" + currentQuestion.feedback + "<br/><br/>")
+				endSummary.push(currentQuestion.question + "<br /> You answered: <br />"+ selectedAnswer+"<br /> The correct answer is: <br/>"+currentQuestion.answer1 + "<br/> Please also note that: <br/>" + currentQuestion.feedback + "<br/><br/>");
 			}
 		}
 		else{}
@@ -221,7 +221,7 @@ $(document).ready(function(){
 		for (var i = 0 ; i < endSummary.length; i++)
 			document.getElementById("endSummary").innerHTML += endSummary[i]
 		if (endSummary.length == 0) document.getElementById("endSummary").innerHTML += 	"<img src=\"./img/Logo2.png\" alt=\"logo, congrats you won!\" />";
-
+		document.getElementById("endSummary").innerHTML += "<div class=\"submit\" id = \"continue\"> <input type=\"image\" src=\"./img/continue.png\" name=\"saveForm\" class=\"btSubmit\" id=\"btsub\"  /></div>";
 	}
 
 
@@ -392,7 +392,7 @@ $(document).ready(function(){
 
 				{
 			    "QuestionID":"2000", 
-			    "Question":"Which of the following will display the value of x and a descriptive string to the standard output if x is an integer?",
+			    "Question":"In python 2.7, which of the following will concatinate a string with an integer?",
 			    "Answers":{
 				     "CorrectAnswer": " print \"The value of x is: {}\".format(x) ", 
 				     "Incorrect1": " print  \"The value of x is:\" + x ", 
